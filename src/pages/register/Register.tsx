@@ -80,7 +80,7 @@ export default function Register() {
             {isError && <Alert msg={error.message} cls="error" />}
 
             <h1>Register</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} method="POST">
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
                     <input
