@@ -61,7 +61,7 @@ export default function Register() {
 
     function handleChange(event: ChangeEvent<HTMLInputElement>): void {
         const { name, value } = event.target
-        setFormData((values) => ({ ...values, [name]: value }))
+        setFormData(values => ({ ...values, [name]: value }))
     }
 
     async function handleSubmit(e: FormEvent): Promise<void> {
