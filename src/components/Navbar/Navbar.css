@@ -1,0 +1,15 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    gap: 1rem;
+}
+
+a {
+    margin-inline: 2rem;
+}
+
+a.active {
+    color: purple;
+}

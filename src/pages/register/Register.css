@@ -1,0 +1,35 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 400px;
+    font: inherit;
+    box-shadow: 2px 3px 1px gainsboro;
+    margin: 2rem auto;
+    border: 1px solid lightgray;
+    border-radius: var(--border-radius);
+}
+
+.form-group {
+    padding: 1rem;
+}
+
+input[type='email'],
+input[type='password'] {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.6rem;
+}
+
+input[type='email'].error,
+input[type='password'].error {
+    border: 1px solid red;
+}
