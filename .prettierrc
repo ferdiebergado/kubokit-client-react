@@ -3,6 +3,8 @@
     "tabWidth": 4,
     "semi": false,
     "singleQuote": true,
+    "bracketSpacing": true,
+    "arrowParens": "avoid",
     "overrides": [
         {
             "files": "*.test.js",
