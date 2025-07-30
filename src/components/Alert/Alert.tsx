@@ -7,7 +7,7 @@ type AlertProps = {
 
 export function Alert({ msg, cls = 'success' }: AlertProps) {
     return (
-        <div className={`alert ${cls}`}>
+        <div className={`alert ${cls}`} role="alert">
             <p>{msg}</p>
         </div>
     )
