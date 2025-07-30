@@ -1,12 +1,11 @@
 import { useErrorBoundary } from 'react-error-boundary'
 
-export default function Fallback({ error }: { error: Error }) {
+export default function Fallback() {
     const { resetBoundary } = useErrorBoundary()
 
     return (
-        <div role="alert">
-            <p>Something went wrong:</p>
-            <pre style={{ color: 'red' }}>{error.message}</pre>
+        <div className="error-wrapper">
+            <h1>Something went wrong.</h1>
             <button onClick={resetBoundary}>Try again</button>
         </div>
     )
