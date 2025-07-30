@@ -64,7 +64,7 @@ export default function Register() {
         setFormData(values => ({ ...values, [name]: value }))
     }
 
-    async function handleSubmit(e: FormEvent): Promise<void> {
+    function handleSubmit(e: FormEvent): void {
         e.preventDefault()
 
         mutate(formData, {
