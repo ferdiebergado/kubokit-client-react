@@ -1,3 +1,18 @@
+label {
+    display: block;
+    margin-bottom: 0.6rem;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid lightgray;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -14,24 +29,12 @@
     padding: 1rem;
 }
 
-label {
-    display: block;
-    margin-bottom: 0.6rem;
+.form-group.error {
+    padding-bottom: 0.5rem;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'] {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    border-radius: var(--border-radius);
-    border: 1px solid lightgray;
-    box-sizing: border-box;
-}
-
-input[type='text'].error,
-input[type='email'].error,
-input[type='password'].error {
+.form-group.error input[type='text'],
+.form-group.error input[type='email'],
+.form-group.error input[type='password'] {
     border: 1px solid red;
 }

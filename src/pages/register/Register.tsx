@@ -121,7 +121,9 @@ export default function Register() {
 
             <h1>Register</h1>
             <form onSubmit={handleSubmit} method="POST">
-                <div className="form-group">
+                <div
+                    className={`form-group ${hasError('email') ? 'error' : ''}`}
+                >
                     <label htmlFor="email">Email</label>
                     <input
                         type="email"
@@ -138,13 +140,14 @@ export default function Register() {
                         <p className="help-text">{getError('email')}</p>
                     )}
                 </div>
-                <div className="form-group">
+                <div
+                    className={`form-group ${hasError('password') ? 'error' : ''}`}
+                >
                     <label htmlFor="password">Password</label>
                     <input
                         type="password"
                         name="password"
                         id="password"
-                        className={hasError('password') ? 'error' : ''}
                         value={formData.password}
                         onChange={handleChange}
                         placeholder="Password"
@@ -154,13 +157,14 @@ export default function Register() {
                         <p className="help-text">{getError('password')}</p>
                     )}
                 </div>
-                <div className="form-group">
+                <div
+                    className={`form-group ${hasError('password_confirm') ? 'error' : ''}`}
+                >
                     <label htmlFor="password_confirm">Confirm password</label>
                     <input
                         type="password"
                         name="password_confirm"
                         id="password_confirm"
-                        className={hasError('password_confirm') ? 'error' : ''}
                         value={formData.password_confirm}
                         onChange={handleChange}
                         placeholder="Confirm password"
