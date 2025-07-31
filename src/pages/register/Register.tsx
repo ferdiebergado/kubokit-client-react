@@ -91,14 +91,27 @@ export default function Register() {
         })
     }
 
+    function isFormValidationError(
+        err: unknown
+    ): err is ValidationError<FormErrors> {
+        return (
+            err instanceof ValidationError &&
+            typeof err.details === 'object' &&
+            err.details !== undefined
+        )
+    }
+
     function hasError(field: string): boolean {
-        return (isError &&
-            error instanceof ValidationError &&
-            (error as ValidationError<FormErrors>).details[field]) as boolean
+        if (isError && isFormValidationError(error)) {
+            return !!error.details[field]
+        }
+        return false
     }
 
     function getError(field: string): string | undefined {
-        return (error as ValidationError<FormErrors>).details[field]
+        if (isError && isFormValidationError(error)) {
+            return error.details[field]
+        }
     }
 
     return (

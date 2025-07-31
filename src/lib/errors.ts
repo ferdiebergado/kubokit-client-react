@@ -1,4 +1,4 @@
-export class ValidationError<T = Record<string, string>> extends Error {
+export class ValidationError<T extends object> extends Error {
     details: T
 
     constructor(details: T) {
