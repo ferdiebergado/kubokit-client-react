@@ -9,3 +9,15 @@ export class ValidationError<T = Record<string, string>> extends Error {
         Object.setPrototypeOf(this, ValidationError.prototype)
     }
 }
+
+export class HTTPError extends Error {
+    code: number
+
+    constructor(message: string, code: number) {
+        super(message)
+        this.name = 'APIError'
+        this.code = code
+
+        Object.setPrototypeOf(this, HTTPError.prototype)
+    }
+}
