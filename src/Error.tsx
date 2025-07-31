@@ -6,7 +6,9 @@ export default function Fallback() {
     return (
         <div className="error-wrapper">
             <h1>Something went wrong.</h1>
-            <button onClick={resetBoundary}>Try again</button>
+            <button type="button" onClick={resetBoundary}>
+                Try again
+            </button>
         </div>
     )
 }
