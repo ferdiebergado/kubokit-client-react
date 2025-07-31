@@ -15,7 +15,7 @@ export class HTTPError extends Error {
 
     constructor(message: string, code: number) {
         super(message)
-        this.name = 'APIError'
+        this.name = 'HTTPError'
         this.code = code
 
         Object.setPrototypeOf(this, HTTPError.prototype)
