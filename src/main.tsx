@@ -1,13 +1,13 @@
+import Home from '@pages/Home'
+import Register from '@pages/register'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ErrorBoundary } from 'react-error-boundary'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import App from './App'
 import Fallback from './Error'
 import './index.css'
-import Home from './pages/Home'
-import Register from './pages/register'
-import { QueryClient, QueryClientProvider } from 'react-query'
 
 const queryClient = new QueryClient()
 

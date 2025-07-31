@@ -1,7 +1,7 @@
+import { Alert } from '@components'
+import { HTTPError, ValidationError } from '@lib/errors'
 import { useState, type ChangeEvent, type FormEvent } from 'react'
 import { useMutation } from 'react-query'
-import { Alert } from '../../components/Alert/Alert'
-import { HTTPError, ValidationError } from '../../lib/errors'
 import type { APIResponse } from '../../types'
 import './Register.css'
 
