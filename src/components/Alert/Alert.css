@@ -1,15 +1,15 @@
 .alert {
-    padding: 0.6rem 2rem;
+    padding: 0.5rem 1.5rem;
     margin: 1rem;
     border-radius: var(--border-radius);
 }
 
 .alert.error {
-    background-color: lightcoral;
-    color: crimson;
+    background-color: #ffcccc;
+    color: red;
 }
 
 .alert.success {
-    background-color: lightgreen;
-    color: darkgreen;
+    background-color: #cce5cc;
+    color: green;
 }
