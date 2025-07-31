@@ -1,6 +1,6 @@
 import './Alert.css'
 
-type AlertProps = {
+interface AlertProps {
     msg: string
     cls?: 'success' | 'error'
 }

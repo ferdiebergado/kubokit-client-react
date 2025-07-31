@@ -28,13 +28,16 @@ async function registerUser(formData: FormData): Promise<string | undefined> {
             }),
         })
 
-        const { message, error }: APIResponse<undefined, FormErrors> =
-            await res.json()
+        const { message, error } = (await res.json()) as APIResponse<
+            undefined,
+            FormErrors
+        >
 
         if (!res.ok) {
-            if (res.status === 422) {
-                throw new ValidationError(error!)
+            if (res.status === 422 && error) {
+                throw new ValidationError(error)
             }
+
             throw new HTTPError(message, res.status)
         }
 

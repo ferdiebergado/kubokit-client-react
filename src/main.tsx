@@ -11,7 +11,12 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 
 const queryClient = new QueryClient()
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')
+if (!root) {
+    throw new Error('root element not defined')
+}
+
+createRoot(root).render(
     <StrictMode>
         <ErrorBoundary FallbackComponent={Fallback}>
             <QueryClientProvider client={queryClient}>
