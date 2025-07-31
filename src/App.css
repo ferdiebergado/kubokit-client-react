@@ -23,7 +23,8 @@
 .help-text {
     color: red;
     font-size: small;
-    margin-inline: 1rem;
+    padding-inline: 1rem;
+    margin: 0.6rem 0 0;
 }
 
 .btn-primary {
@@ -35,6 +36,7 @@
     font-size: inherit;
     margin-inline: 2rem;
     border: 1px solid transparent;
+    margin: 0.5rem 1rem;
 }
 
 .error-wrapper {
