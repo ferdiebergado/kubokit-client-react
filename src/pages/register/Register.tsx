@@ -148,6 +148,7 @@ export default function Register() {
                         type="password"
                         name="password"
                         id="password"
+                        className={hasError('password') ? 'error' : ''}
                         value={formData.password}
                         onChange={handleChange}
                         placeholder="Password"
@@ -165,6 +166,7 @@ export default function Register() {
                         type="password"
                         name="password_confirm"
                         id="password_confirm"
+                        className={hasError('password_confirm') ? 'error' : ''}
                         value={formData.password_confirm}
                         onChange={handleChange}
                         placeholder="Confirm password"
@@ -179,6 +181,7 @@ export default function Register() {
                 <button
                     type="submit"
                     className="btn-primary"
+                    role="button"
                     disabled={isLoading}
                 >
                     {isLoading ? 'Submitting...' : 'Submit'}
