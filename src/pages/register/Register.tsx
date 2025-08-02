@@ -13,7 +13,7 @@ interface FormData extends Record<string, string> {
 
 type FormErrors = Partial<FormData>
 
-async function registerUser(formData: FormData): Promise<string | undefined> {
+async function registerUser(formData: FormData): Promise<string> {
     try {
         const { email, password, password_confirm } = formData
         const res = await fetch('http://localhost:8888/auth/register', {
@@ -116,7 +116,7 @@ export default function Register() {
 
     return (
         <div className="wrapper">
-            {isSuccess && <Alert msg={data as string} />}
+            {isSuccess && <Alert msg={data} />}
             {isError && <Alert msg={error.message} cls="error" />}
 
             <h1>Register</h1>
