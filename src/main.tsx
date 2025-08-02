@@ -1,5 +1,5 @@
-import Home from '@pages/Home'
-import Register from '@pages/register'
+import Home from '@/pages/Home'
+import Register from '@/pages/register'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ErrorBoundary } from 'react-error-boundary'
