@@ -2,8 +2,8 @@ import { Alert } from '@/components'
 import { HTTPError, ValidationError } from '@/lib/errors'
 import { useState, type ChangeEvent, type FormEvent } from 'react'
 import { useMutation } from 'react-query'
-import type { APIResponse } from '../../types'
-import './Register.css'
+import type { APIResponse } from '../../../types'
+import './Signup.css'
 
 interface FormData extends Record<string, string> {
     email: string
@@ -13,7 +13,7 @@ interface FormData extends Record<string, string> {
 
 type FormErrors = Partial<FormData>
 
-async function registerUser(formData: FormData): Promise<string> {
+async function signupUser(formData: FormData): Promise<string> {
     try {
         const { email, password, password_confirm } = formData
         const res = await fetch('http://localhost:8888/auth/register', {
@@ -57,7 +57,7 @@ async function registerUser(formData: FormData): Promise<string> {
     }
 }
 
-export default function Register() {
+export default function Signup() {
     const initialData: FormData = {
         email: '',
         password: '',
@@ -67,12 +67,12 @@ export default function Register() {
     const [formData, setFormData] = useState(initialData)
 
     const { mutate, error, isError, isLoading, data, isSuccess } = useMutation<
-        Awaited<ReturnType<typeof registerUser>>,
+        Awaited<ReturnType<typeof signupUser>>,
         Error,
         FormData
     >({
         mutationFn: (formData: FormData) => {
-            return registerUser(formData)
+            return signupUser(formData)
         },
     })
 
@@ -119,7 +119,7 @@ export default function Register() {
             {isSuccess && <Alert msg={data} />}
             {isError && <Alert msg={error.message} cls="error" />}
 
-            <h1>Register</h1>
+            <h1>Sign Up</h1>
             <form onSubmit={handleSubmit} method="POST">
                 <div
                     className={`form-group ${hasError('email') ? 'error' : ''}`}

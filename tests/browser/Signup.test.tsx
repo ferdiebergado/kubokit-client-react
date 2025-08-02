@@ -1,13 +1,13 @@
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { describe, beforeEach, vi, expect, it } from 'vitest'
 import { render } from 'vitest-browser-react'
-import Register from '@/pages/register/Register'
+import Signup from '@/features/account/signup'
 
 beforeEach(() => {
     vi.restoreAllMocks()
 })
 
-describe('Register component', () => {
+describe('Signup component', () => {
     it('submits successfully and resets form', async () => {
         vi.stubGlobal(
             'fetch',
@@ -28,7 +28,7 @@ describe('Register component', () => {
 
         const { getByLabelText, getByRole } = render(
             <QueryClientProvider client={queryClient}>
-                <Register />
+                <Signup />
             </QueryClientProvider>
         )
 
@@ -81,7 +81,7 @@ describe('Register component', () => {
 
         const { getByLabelText, getByRole, getByText } = render(
             <QueryClientProvider client={queryClient}>
-                <Register />
+                <Signup />
             </QueryClientProvider>
         )
 
@@ -127,7 +127,7 @@ describe('Register component', () => {
 
         const { getByLabelText, getByRole } = render(
             <QueryClientProvider client={queryClient}>
-                <Register />
+                <Signup />
             </QueryClientProvider>
         )
 

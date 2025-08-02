@@ -1,5 +1,5 @@
-import Home from '@/pages/Home'
-import Register from '@/pages/register'
+import Home from '@/Home'
+import Signup from '@/features/account/signup'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ErrorBoundary } from 'react-error-boundary'
@@ -24,7 +24,7 @@ createRoot(root).render(
                     <Routes>
                         <Route path="/" element={<App />}>
                             <Route index element={<Home />}></Route>
-                            <Route path="register" element={<Register />} />
+                            <Route path="signup" element={<Signup />} />
                         </Route>
                     </Routes>
                 </BrowserRouter>
