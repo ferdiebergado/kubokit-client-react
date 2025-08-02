@@ -1,5 +1,5 @@
-import { Alert } from '@components'
-import { HTTPError, ValidationError } from '@lib/errors'
+import { Alert } from '@/components'
+import { HTTPError, ValidationError } from '@/lib/errors'
 import { useState, type ChangeEvent, type FormEvent } from 'react'
 import { useMutation } from 'react-query'
 import type { APIResponse } from '../../types'
@@ -67,7 +67,7 @@ export default function Register() {
     const [formData, setFormData] = useState(initialData)
 
     const { mutate, error, isError, isLoading, data, isSuccess } = useMutation<
-        unknown,
+        Awaited<ReturnType<typeof registerUser>>,
         Error,
         FormData
     >({
