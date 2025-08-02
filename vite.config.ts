@@ -1,14 +1,39 @@
+/// <reference types="vitest/config" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import path from 'path'
 
-// https://vite.dev/config/
 export default defineConfig({
     resolve: {
-        alias: [
-            { find: '@components', replacement: '/src/components' },
-            { find: '@pages', replacement: '/src/pages' },
-            { find: '@lib', replacement: '/src/lib' },
-        ],
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+        },
     },
     plugins: [react()],
+    test: {
+        projects: [
+            {
+                extends: true,
+                test: {
+                    name: 'unit',
+                    environment: 'node',
+                    include: ['./src/**/*.{test,spec}.ts'],
+                },
+            },
+            {
+                extends: true,
+                test: {
+                    name: 'browser',
+                    browser: {
+                        enabled: true,
+                        headless: true,
+                        provider: 'playwright',
+                        instances: [{ browser: 'chromium' }],
+                    },
+                    include: ['./src/**/*.{test,spec}.tsx'],
+                    setupFiles: './vitest-setup-client.ts',
+                },
+            },
+        ],
+    },
 })

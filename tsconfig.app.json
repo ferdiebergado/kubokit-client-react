@@ -23,13 +23,12 @@
         "noFallthroughCasesInSwitch": true,
         "noUncheckedSideEffectImports": true,
 
-        /* Custom Paths */
-        "baseUrl": "./src",
+        "baseUrl": ".",
         "paths": {
-            "@components": ["./components"],
-            "@pages/*": ["./pages/*"],
-            "@lib/*": ["./lib/*"]
-        }
+            "@/*": ["src/*"]
+        },
+
+        "types": ["vitest"]
     },
     "include": ["src"]
 }
