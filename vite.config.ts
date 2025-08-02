@@ -17,7 +17,7 @@ export default defineConfig({
                 test: {
                     name: 'unit',
                     environment: 'node',
-                    include: ['./src/**/*.{test,spec}.ts'],
+                    include: ['./tests/unit/**/*.{test,spec}.ts'],
                 },
             },
             {
@@ -30,7 +30,7 @@ export default defineConfig({
                         provider: 'playwright',
                         instances: [{ browser: 'chromium' }],
                     },
-                    include: ['./src/**/*.{test,spec}.tsx'],
+                    include: ['./tests/browser/**/*.{test,spec}.tsx'],
                     setupFiles: './vitest-setup-client.ts',
                 },
             },
