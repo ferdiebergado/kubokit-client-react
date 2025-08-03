@@ -1,10 +1,12 @@
 #root {
+    width: 100%;
     max-width: 1280px;
     margin: 0 auto;
 }
 
 main {
     padding-inline: 3rem;
+    margin: 0 auto;
 }
 
 .logo {
@@ -22,9 +24,10 @@ main {
 
 .card {
     background-color: white;
-    padding: 2em;
+    padding: clamp(0.2rem, 2rem, 2rem);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
+    margin: 0 auto;
 }
 
 .help-text {

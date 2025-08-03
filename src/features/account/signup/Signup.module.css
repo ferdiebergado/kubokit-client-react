@@ -14,14 +14,13 @@
 .form-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 1rem 2rem;
-    width: 30%;
-    min-width: 450px;
+    padding: 1rem clamp(0.2rem, 2rem, 2rem);
     font: inherit;
     margin: 3rem auto;
     border-radius: var(--border-radius);
     background-color: white;
     box-shadow: var(--box-shadow);
+    width: clamp(300px, 40%, 450px);
 }
 
 .form-group {

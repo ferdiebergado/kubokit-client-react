@@ -1,12 +1,13 @@
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 2;
     padding: 1rem 2rem;
     gap: 1rem;
     background-color: var(--foreground-color-light);
-    width: 100vw;
     margin-bottom: 3rem;
+    width: 100%;
 }
 
 .navbar-link {
