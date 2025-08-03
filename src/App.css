@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+main {
+    padding-inline: 3rem;
+}
+
 .logo {
     height: 6em;
     padding: 1.5em;
@@ -36,7 +40,7 @@
     font-size: inherit;
     margin-inline: 2rem;
     border: 1px solid transparent;
-    margin: 0.5rem 1rem;
+    margin: 1rem;
 }
 
 .error-wrapper {
