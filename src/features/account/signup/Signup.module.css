@@ -21,6 +21,7 @@
     margin: 3rem auto;
     border-radius: var(--border-radius);
     background-color: white;
+    box-shadow: var(--box-shadow);
 }
 
 .form-group {
