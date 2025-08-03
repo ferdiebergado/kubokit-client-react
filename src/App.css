@@ -21,7 +21,10 @@ main {
 }
 
 .card {
+    background-color: white;
     padding: 2em;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
 }
 
 .help-text {
@@ -64,6 +67,7 @@ main {
 }
 
 footer {
+    margin-top: 2rem;
     text-align: center;
     font-size: small;
 }
