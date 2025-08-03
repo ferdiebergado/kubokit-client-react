@@ -1,7 +1,8 @@
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { describe, beforeEach, vi, expect, it } from 'vitest'
-import { render } from 'vitest-browser-react'
 import { Signup } from '@/features/account'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { createRoutesStub } from 'react-router'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { render } from 'vitest-browser-react'
 
 beforeEach(() => {
     vi.restoreAllMocks()
@@ -26,9 +27,16 @@ describe('Signup component', () => {
 
         const queryClient = new QueryClient()
 
+        const Stub = createRoutesStub([
+            {
+                path: '/account/signin',
+                Component: Signup,
+            },
+        ])
+
         const { getByLabelText, getByRole } = render(
             <QueryClientProvider client={queryClient}>
-                <Signup />
+                <Stub initialEntries={['/account/signin']} />
             </QueryClientProvider>
         )
 
@@ -77,9 +85,16 @@ describe('Signup component', () => {
 
         const queryClient = new QueryClient()
 
+        const Stub = createRoutesStub([
+            {
+                path: '/account/signin',
+                Component: Signup,
+            },
+        ])
+
         const { getByLabelText, getByRole, getByText } = render(
             <QueryClientProvider client={queryClient}>
-                <Signup />
+                <Stub initialEntries={['/account/signin']} />
             </QueryClientProvider>
         )
 
@@ -121,9 +136,16 @@ describe('Signup component', () => {
 
         const queryClient = new QueryClient()
 
+        const Stub = createRoutesStub([
+            {
+                path: '/account/signin',
+                Component: Signup,
+            },
+        ])
+
         const { getByLabelText, getByRole } = render(
             <QueryClientProvider client={queryClient}>
-                <Signup />
+                <Stub initialEntries={['/account/signin']} />
             </QueryClientProvider>
         )
 
