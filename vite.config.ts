@@ -23,14 +23,14 @@ export default defineConfig({
             {
                 extends: true,
                 test: {
-                    name: 'browser',
+                    name: 'component',
                     browser: {
                         enabled: true,
                         headless: true,
                         provider: 'playwright',
                         instances: [{ browser: 'chromium' }],
                     },
-                    include: ['./tests/browser/**/*.{test,spec}.tsx'],
+                    include: ['./tests/component/**/*.{test,spec}.tsx'],
                     setupFiles: './vitest-setup-client.ts',
                 },
             },
