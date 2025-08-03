@@ -7,6 +7,7 @@ import reactX from 'eslint-plugin-react-x'
 import { globalIgnores } from 'eslint/config'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
+import pluginQuery from '@tanstack/eslint-plugin-query'
 
 export default tseslint.config([
     globalIgnores(['dist']),
@@ -14,12 +15,13 @@ export default tseslint.config([
         files: ['**/*.{ts,tsx}'],
         extends: [
             js.configs.recommended,
-            tseslint.configs.strictTypeChecked,
-            tseslint.configs.stylisticTypeChecked,
+            ...tseslint.configs.strictTypeChecked,
+            ...tseslint.configs.stylisticTypeChecked,
             reactHooks.configs['recommended-latest'],
             reactRefresh.configs.vite,
             reactX.configs['recommended-typescript'],
             reactDom.configs.recommended,
+            ...pluginQuery.configs['flat/recommended'],
             prettier,
         ],
         languageOptions: {
