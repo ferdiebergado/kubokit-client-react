@@ -12,6 +12,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
+    --background-color-light: #f0f1f3;
+    --foreground-color-light: #383838;
     --primary-color: #646cff;
     --border-radius: 0.4rem;
 }
@@ -44,8 +46,8 @@ h1 {
 
 @media (prefers-color-scheme: light) {
     :root {
-        color: #213547;
-        background-color: #ffffff;
+        color: var(--foreground-color-light);
+        background-color: var(--background-color-light);
     }
     a:hover {
         color: #747bff;
