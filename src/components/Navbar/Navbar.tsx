@@ -23,7 +23,7 @@ export default function Navbar() {
             </NavLink>
             <NavLink
                 className={({ isActive }) => getClass(isActive)}
-                to="/signup"
+                to="/accounts/signup"
                 end
             >
                 Sign Up
