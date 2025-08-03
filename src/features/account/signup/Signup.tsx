@@ -3,7 +3,7 @@ import { HTTPError, ValidationError } from '@/lib/errors'
 import { useState, type ChangeEvent, type FormEvent } from 'react'
 import { useMutation } from 'react-query'
 import type { APIResponse } from '../../../types'
-import './Signup.css'
+import styles from './Signup.module.css'
 
 interface FormData extends Record<string, string> {
     email: string
@@ -115,21 +115,23 @@ export default function Signup() {
     }
 
     return (
-        <div className="wrapper">
+        <div className={styles['form-wrapper']}>
             {isSuccess && <Alert msg={data} />}
             {isError && <Alert msg={error.message} cls="error" />}
 
             <h1>Sign Up</h1>
             <form onSubmit={handleSubmit} method="POST">
                 <div
-                    className={`form-group ${hasError('email') ? 'error' : ''}`}
+                    className={`${styles['form-group']} ${hasError('email') ? 'error' : ''}`}
                 >
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email" className={styles['form-label']}>
+                        Email
+                    </label>
                     <input
                         type="email"
                         name="email"
                         id="email"
-                        className={hasError('email') ? 'error' : ''}
+                        className={`${styles['form-input']} ${hasError('email') ? 'error' : ''}`}
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="Email"
@@ -141,14 +143,16 @@ export default function Signup() {
                     )}
                 </div>
                 <div
-                    className={`form-group ${hasError('password') ? 'error' : ''}`}
+                    className={`${styles['form-group']} ${hasError('password') ? 'error' : ''}`}
                 >
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password" className={styles['form-label']}>
+                        Password
+                    </label>
                     <input
                         type="password"
                         name="password"
                         id="password"
-                        className={hasError('password') ? 'error' : ''}
+                        className={`${styles['form-input']} ${hasError('password') ? 'error' : ''}`}
                         value={formData.password}
                         onChange={handleChange}
                         placeholder="Password"
@@ -159,14 +163,19 @@ export default function Signup() {
                     )}
                 </div>
                 <div
-                    className={`form-group ${hasError('password_confirm') ? 'error' : ''}`}
+                    className={`${styles['form-group']} ${hasError('password_confirm') ? 'error' : ''}`}
                 >
-                    <label htmlFor="password_confirm">Confirm password</label>
+                    <label
+                        htmlFor="password_confirm"
+                        className={styles['form-label']}
+                    >
+                        Confirm password
+                    </label>
                     <input
                         type="password"
                         name="password_confirm"
                         id="password_confirm"
-                        className={hasError('password_confirm') ? 'error' : ''}
+                        className={`${styles['form-input']} ${hasError('password_confirm') ? 'error' : ''}`}
                         value={formData.password_confirm}
                         onChange={handleChange}
                         placeholder="Confirm password"

@@ -5,11 +5,11 @@
 }
 
 .alert.error {
-    background-color: #ffcccc;
+    background-color: #ffe5e5;
     color: red;
 }
 
 .alert.success {
-    background-color: #cce5cc;
+    background-color: #e5f2e5;
     color: green;
 }

@@ -1,11 +1,9 @@
-label {
+.form-label {
     display: block;
     margin-bottom: 0.6rem;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'] {
+.form-input {
     display: block;
     width: 100%;
     padding: 1rem;
@@ -13,16 +11,16 @@ input[type='password'] {
     border: 1px solid lightgray;
 }
 
-.wrapper {
+.form-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    width: 400px;
+    padding: 1rem 2rem;
+    width: 30%;
+    min-width: 450px;
     font: inherit;
-    box-shadow: 2px 3px 1px gainsboro;
-    margin: 2rem auto;
-    border: 1px solid lightgray;
+    margin: 3rem auto;
     border-radius: var(--border-radius);
+    background-color: white;
 }
 
 .form-group {
@@ -33,8 +31,6 @@ input[type='password'] {
     padding-bottom: 0.5rem;
 }
 
-input[type='text'].error,
-input[type='email'].error,
-input[type='password'].error {
+.form-input.error {
     border: 1px solid red;
 }

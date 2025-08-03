@@ -1,0 +1,25 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    background-color: var(--foreground-color-light);
+    width: 100vw;
+    margin-bottom: 3rem;
+}
+
+.navbar-link {
+    color: white;
+    margin-inline: 2rem;
+    font: inherit;
+}
+
+.navbar-link.active {
+    color: bisque;
+    font-weight: bold;
+}
+
+.navbar-link:hover {
+    color: beige;
+}
