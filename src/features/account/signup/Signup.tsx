@@ -4,6 +4,7 @@ import { useState, type ChangeEvent, type FormEvent } from 'react'
 import { useMutation } from 'react-query'
 import type { APIResponse } from '../../../types'
 import styles from './Signup.module.css'
+import { Link } from 'react-router'
 
 interface FormData extends Record<string, string> {
     email: string
@@ -187,14 +188,22 @@ export default function Signup() {
                         </p>
                     )}
                 </div>
-                <button
-                    type="submit"
-                    className="btn-primary"
-                    role="button"
-                    disabled={isLoading}
-                >
-                    {isLoading ? 'Submitting...' : 'Submit'}
-                </button>
+                <div>
+                    <button
+                        type="submit"
+                        className="btn-primary"
+                        role="button"
+                        disabled={isLoading}
+                    >
+                        {isLoading ? 'Submitting...' : 'Submit'}
+                    </button>
+                    <span>
+                        <small>
+                            Already have an account?{' '}
+                            <Link to="/account/signin">Sign In</Link>
+                        </small>
+                    </span>
+                </div>
             </form>
         </div>
     )
