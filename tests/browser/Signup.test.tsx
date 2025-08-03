@@ -43,10 +43,8 @@ describe('Signup component', () => {
 
         const alert = getByRole('alert')
         await expect.element(alert).toBeVisible()
-        await expect.element(alert).toHaveClass('success')
-        await expect
-            .element(alert.getByText('Registration successful'))
-            .toBeVisible()
+        expect(alert).toHaveClass(/success/)
+        expect(alert.getByText('Registration successful')).toBeVisible()
 
         await Promise.all([
             expect(emailByLabel).toHaveValue(''),
@@ -96,14 +94,14 @@ describe('Signup component', () => {
 
         const alert = getByRole('alert')
         await expect.element(alert).toBeVisible()
-        await expect.element(alert).toHaveClass('error')
-        await expect.element(alert.getByText('Invalid input')).toBeVisible()
+        expect(alert).toHaveClass(/error/)
+        expect(alert.getByText('Invalid input')).toBeVisible()
 
-        await expect.element(emailByLabel).toHaveClass('error')
-        await expect.element(getByText('Invalid email')).toBeInTheDocument()
+        await expect.element(emailByLabel).toHaveClass(/error/)
+        await expect.element(getByText('Invalid email')).toBeVisible()
 
-        await expect.element(passwordConfirmByLabel).toHaveClass('error')
-        await expect.element(getByText('Does not match')).toBeInTheDocument()
+        await expect.element(passwordConfirmByLabel).toHaveClass(/error/)
+        await expect.element(getByText('Does not match')).toBeVisible()
     })
 
     it('shows error when account already exists', async () => {
@@ -140,10 +138,8 @@ describe('Signup component', () => {
 
         const alert = getByRole('alert')
         await expect.element(alert).toBeVisible()
-        await expect.element(alert).toHaveClass('error')
+        expect(alert).toHaveClass(/error/)
 
-        await expect
-            .element(alert.getByText('User already exists'))
-            .toBeVisible()
+        expect(alert.getByText('User already exists')).toBeVisible()
     })
 })
