@@ -122,7 +122,7 @@ export default function Signup() {
             <h1>Sign Up</h1>
             <form onSubmit={handleSubmit} method="POST">
                 <div
-                    className={`${styles['form-group']} ${hasError('email') ? 'error' : ''}`}
+                    className={`${styles['form-group']} ${hasError('email') ? styles.error : ''}`}
                 >
                     <label htmlFor="email" className={styles['form-label']}>
                         Email
@@ -131,7 +131,7 @@ export default function Signup() {
                         type="email"
                         name="email"
                         id="email"
-                        className={`${styles['form-input']} ${hasError('email') ? 'error' : ''}`}
+                        className={`${styles['form-input']} ${hasError('email') ? styles.error : ''}`}
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="Email"
@@ -143,7 +143,7 @@ export default function Signup() {
                     )}
                 </div>
                 <div
-                    className={`${styles['form-group']} ${hasError('password') ? 'error' : ''}`}
+                    className={`${styles['form-group']} ${hasError('password') ? styles.error : ''}`}
                 >
                     <label htmlFor="password" className={styles['form-label']}>
                         Password
@@ -152,7 +152,7 @@ export default function Signup() {
                         type="password"
                         name="password"
                         id="password"
-                        className={`${styles['form-input']} ${hasError('password') ? 'error' : ''}`}
+                        className={`${styles['form-input']} ${hasError('password') ? styles.error : ''}`}
                         value={formData.password}
                         onChange={handleChange}
                         placeholder="Password"
@@ -163,7 +163,7 @@ export default function Signup() {
                     )}
                 </div>
                 <div
-                    className={`${styles['form-group']} ${hasError('password_confirm') ? 'error' : ''}`}
+                    className={`${styles['form-group']} ${hasError('password_confirm') ? styles.error : ''}`}
                 >
                     <label
                         htmlFor="password_confirm"
@@ -175,7 +175,7 @@ export default function Signup() {
                         type="password"
                         name="password_confirm"
                         id="password_confirm"
-                        className={`${styles['form-input']} ${hasError('password_confirm') ? 'error' : ''}`}
+                        className={`${styles['form-input']} ${hasError('password_confirm') ? styles.error : ''}`}
                         value={formData.password_confirm}
                         onChange={handleChange}
                         placeholder="Confirm password"
