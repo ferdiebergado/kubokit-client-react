@@ -15,7 +15,7 @@ function App() {
                 </section>
             </main>
 
-            <footer>&copy; Copyright 2025 - present.</footer>
+            <footer>&copy; 2025 by ferdie bergado</footer>
         </>
     )
 }
