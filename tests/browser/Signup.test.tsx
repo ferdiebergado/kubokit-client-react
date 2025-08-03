@@ -46,7 +46,7 @@ describe('Signup component', () => {
         await expect.element(alert).toHaveClass('success')
         await expect
             .element(alert.getByText('Registration successful'))
-            .toBeInTheDocument()
+            .toBeVisible()
 
         await Promise.all([
             expect(emailByLabel).toHaveValue(''),
@@ -97,9 +97,7 @@ describe('Signup component', () => {
         const alert = getByRole('alert')
         await expect.element(alert).toBeVisible()
         await expect.element(alert).toHaveClass('error')
-        await expect
-            .element(alert.getByText('Invalid input'))
-            .toBeInTheDocument()
+        await expect.element(alert.getByText('Invalid input')).toBeVisible()
 
         await expect.element(emailByLabel).toHaveClass('error')
         await expect.element(getByText('Invalid email')).toBeInTheDocument()
@@ -146,6 +144,6 @@ describe('Signup component', () => {
 
         await expect
             .element(alert.getByText('User already exists'))
-            .toBeInTheDocument()
+            .toBeVisible()
     })
 })
