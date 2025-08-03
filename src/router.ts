@@ -1,8 +1,7 @@
 import { createBrowserRouter } from 'react-router'
 import App from './App'
 import Home from './Home'
-import Signup from './features/account/signup'
-import Layout from './features/account/Layout'
+import { Layout, Signup } from './features/account'
 
 export const router = createBrowserRouter([
     {

@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { describe, beforeEach, vi, expect, it } from 'vitest'
 import { render } from 'vitest-browser-react'
-import Signup from '@/features/account/signup'
+import { Signup } from '@/features/account'
 
 beforeEach(() => {
     vi.restoreAllMocks()
