@@ -18,7 +18,7 @@ afterAll(() => {
 interface TestCase {
     description: string
     Component: ComponentType
-    loader?: () => Promise<void>
+    loader?: <T>() => Promise<T>
 }
 
 describe('Fallback component', () => {
@@ -42,8 +42,8 @@ describe('Fallback component', () => {
         {
             description: 'displays on loader error',
             Component: ComponentWithLoaderBug,
-            loader: async () => {
-                await Promise.reject(new Error('failed to fetch data'))
+            loader: () => {
+                throw new Error('failed to fetch data')
             },
         },
     ]
