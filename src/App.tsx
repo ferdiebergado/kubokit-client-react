@@ -1,23 +1,38 @@
-import { Navbar } from '@/components'
-import { Outlet } from 'react-router'
-import './App.css'
+import { createBrowserRouter, RouterProvider } from 'react-router'
+import ErrorFallback from './Error'
+import { Account, Signup } from './features/account'
+import Home from './Home'
+import Layout from './Layout'
+import NotFound from './NotFound'
 
-function App() {
-    return (
-        <>
-            <header>
-                <Navbar />
-            </header>
+const router = createBrowserRouter([
+    {
+        path: '/',
+        Component: Layout,
+        ErrorBoundary: ErrorFallback,
+        children: [
+            {
+                index: true,
+                Component: Home,
+            },
+            {
+                path: 'account',
+                Component: Account,
+                children: [
+                    {
+                        path: 'signup',
+                        Component: Signup,
+                    },
+                ],
+            },
+            {
+                path: '*',
+                Component: NotFound,
+            },
+        ],
+    },
+])
 
-            <main>
-                <section>
-                    <Outlet />
-                </section>
-            </main>
-
-            <footer>&copy; 2025 by ferdie bergado</footer>
-        </>
-    )
+export default function App() {
+    return <RouterProvider router={router} />
 }
-
-export default App

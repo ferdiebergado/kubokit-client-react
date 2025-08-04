@@ -1,9 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { RouterProvider } from 'react-router'
+import App from './App'
 import './index.css'
-import { router } from './router'
 
 const queryClient = new QueryClient()
 
@@ -15,7 +14,7 @@ if (!root) {
 createRoot(root).render(
     <StrictMode>
         <QueryClientProvider client={queryClient}>
-            <RouterProvider router={router} />
+            <App />
         </QueryClientProvider>
     </StrictMode>
 )

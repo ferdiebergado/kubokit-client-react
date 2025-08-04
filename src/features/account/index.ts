@@ -1,4 +1,4 @@
-import Layout from './Layout'
+import Account from './Account'
 import Signup from './signup'
 
-export { Layout, Signup }
+export { Account, Signup }
