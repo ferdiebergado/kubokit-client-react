@@ -1,4 +1,4 @@
-import { Navbar } from '@/components'
+import Navbar from '@/components/Navbar/Navbar'
 import { Outlet } from 'react-router'
 import './App.css'
 

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router'
 import ErrorFallback from './Error'
-import { Account, Signup } from './features/account'
+import Account from './features/account/Account'
+import Signup from './features/account/signup/Signup'
 import Home from './Home'
 import Layout from './Layout'
 import NotFound from './NotFound'

@@ -1,10 +1,10 @@
-import { Alert } from '@/components'
+import Alert from '@/components/Alert/Alert'
 import { HTTPError, ValidationError } from '@/lib/errors'
+import type { APIResponse } from '@/types'
 import { useState, type ChangeEvent, type FormEvent } from 'react'
 import { useMutation } from 'react-query'
-import type { APIResponse } from '../../../types'
-import styles from './Signup.module.css'
 import { Link } from 'react-router'
+import styles from './Signup.module.css'
 
 interface FormData extends Record<string, string> {
     email: string

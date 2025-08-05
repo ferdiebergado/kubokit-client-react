@@ -1,4 +1,4 @@
-import { Signup } from '@/features/account'
+import Signup from '@/features/account/signup/Signup'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { createRoutesStub } from 'react-router'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
