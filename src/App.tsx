@@ -1,38 +1,16 @@
-import { createBrowserRouter, RouterProvider } from 'react-router'
-import ErrorFallback from './Error'
-import { Account, Signup } from './features/account'
-import Home from './Home'
-import Layout from './Layout'
-import NotFound from './NotFound'
+import { StrictMode } from 'react'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { RouterProvider } from 'react-router'
+import { router } from './router'
 
-const router = createBrowserRouter([
-    {
-        path: '/',
-        Component: Layout,
-        ErrorBoundary: ErrorFallback,
-        children: [
-            {
-                index: true,
-                Component: Home,
-            },
-            {
-                path: 'account',
-                Component: Account,
-                children: [
-                    {
-                        path: 'signup',
-                        Component: Signup,
-                    },
-                ],
-            },
-            {
-                path: '*',
-                Component: NotFound,
-            },
-        ],
-    },
-])
+const queryClient = new QueryClient()
 
 export default function App() {
-    return <RouterProvider router={router} />
+    return (
+        <StrictMode>
+            <QueryClientProvider client={queryClient}>
+                <RouterProvider router={router} />
+            </QueryClientProvider>
+        </StrictMode>
+    )
 }
