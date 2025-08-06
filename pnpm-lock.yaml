@@ -48,6 +48,9 @@ importers:
       eslint-config-prettier:
         specifier: ^10.1.8
         version: 10.1.8(eslint@9.32.0)
+      eslint-plugin-no-barrel-files:
+        specifier: ^1.2.2
+        version: 1.2.2(eslint@9.32.0)(typescript@5.8.3)
       eslint-plugin-react-dom:
         specifier: ^1.52.3
         version: 1.52.3(eslint@9.32.0)(typescript@5.8.3)
@@ -875,6 +878,9 @@ packages:
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
+
+  eslint-plugin-no-barrel-files@1.2.2:
+    resolution: {integrity: sha512-DF2bnHuEHClmL1+maBO5TD2HnnRsLj8J69FFtVkjObkELyjCXaWBsk+URJkqBpdOWURlL+raGX9AEpWCAiOV0g==}
 
   eslint-plugin-react-dom@1.52.3:
     resolution: {integrity: sha512-HUMzOYrgRdT6di+OMMJWBCbIB9yY3YUkLvDhExsfap0HX3X1EpZutEWdQg4CMthF2rslYMMF2cnN5pOVrQ5Rkw==}
@@ -2430,6 +2436,14 @@ snapshots:
   eslint-config-prettier@10.1.8(eslint@9.32.0):
     dependencies:
       eslint: 9.32.0
+
+  eslint-plugin-no-barrel-files@1.2.2(eslint@9.32.0)(typescript@5.8.3):
+    dependencies:
+      '@typescript-eslint/utils': 8.38.0(eslint@9.32.0)(typescript@5.8.3)
+    transitivePeerDependencies:
+      - eslint
+      - supports-color
+      - typescript
 
   eslint-plugin-react-dom@1.52.3(eslint@9.32.0)(typescript@5.8.3):
     dependencies:
