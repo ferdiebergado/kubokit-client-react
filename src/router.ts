@@ -6,7 +6,7 @@ import Home from './Home'
 import Layout from './Layout'
 import NotFound from './NotFound'
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
     {
         path: '/',
         Component: Layout,
@@ -33,3 +33,5 @@ export const router = createBrowserRouter([
         Component: NotFound,
     },
 ])
+
+export default router

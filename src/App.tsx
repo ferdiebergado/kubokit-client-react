@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { RouterProvider } from 'react-router'
-import { router } from './router'
+import router from './router'
 
 const queryClient = new QueryClient()
 
